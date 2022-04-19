@@ -21,9 +21,6 @@ export default function Home() {
             query: gql`
                 {
                     characters(filter: { name: "${search}" }) {
-                        info {
-                            count
-                        }
                         results {
                             name,
                             status,
