@@ -1,0 +1,84 @@
+.CharacterCard {
+    display: flex;
+    flex-direction: column;
+    
+    &Image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        margin-bottom: 16px;
+        content: "";
+        display: block;
+        position: relative;
+
+        &Deceased {
+            opacity: 0.5;
+            transition: 0.3s ease;
+            filter: saturate(0%);
+
+            &:hover {
+                opacity: 0.8;
+                filter: saturate(75%);
+            }
+        }
+    }
+
+    &Name {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    &Status {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #aaa;
+        letter-spacing: 2px;
+    }
+
+    &Add {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #6666ff;
+        margin-top: 16px;
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            line-height: 1;
+            color: white;
+            z-index: 10;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 5;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #6666ff;
+            opacity: 0.25;
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+}

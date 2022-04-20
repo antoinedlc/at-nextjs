@@ -1,0 +1,147 @@
+.Cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    z-index: 15;
+    padding: 64px 32px;
+    height: 100vh;
+    background: #26263f;
+
+    &Opened {
+        transform: none;
+
+        .CartOpen {
+            opacity: 0;
+        }
+    }
+
+    &Open {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #6666ff;
+        margin-top: 16px;
+        margin-left: auto;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: -64px;
+
+        &::before {
+            content: "<";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            line-height: 1;
+            color: white;
+            z-index: 10;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 5;
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #6666ff;
+            opacity: 0.25;
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+
+    &Close {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #6666ff;
+        margin-top: 16px;
+        margin-left: auto;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 16px;
+
+        &::before {
+            content: "x";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            line-height: 1;
+            color: white;
+            z-index: 10;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 5;
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #6666ff;
+            opacity: 0.25;
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+
+    &Card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 48px;
+
+        &Image {
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+
+        &Infos {
+            color: white !important;
+            display: flex;
+            flex-direction: column;
+            margin-left: 24px;
+
+            &Title {
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 16px;
+            }
+
+            &Quantity {
+                font-size: 18px;
+                color: #a2a2a2;
+            }
+        }
+    }
+}
