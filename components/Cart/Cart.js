@@ -1,10 +1,13 @@
 import { useSelector } from 'react-redux'
 import styles from './Cart.module.scss'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-export default function Cart({opened}){
+export default function Cart(){
+    // je récupère du store l'attribut "characters" de la slice "cart"
     const characters = useSelector((state) => state.cart.characters)
+
+    // Je définis une variable d'état pour gérer l'ouverture/fermeture du panier
     let [isOpened, setIsOpened] = useState(false)
 
     function toggleCart() {
